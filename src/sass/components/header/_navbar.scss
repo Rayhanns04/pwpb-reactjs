@@ -1,0 +1,337 @@
+@import '../../helpers/mixins';
+@import '../../helpers/variables';
+
+.nv__main__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 21px 0 21px 0;
+    position: relative;
+
+    .nav__input__modal {
+        position: absolute;
+        bottom: -62px;
+        right: 44px;
+        z-index: 5;
+        opacity: 0;
+        transition: 850ms cubic-bezier(0.6, 0.02, 0.05, 0.9);
+
+        input[type='text'] {
+            width: 306px;
+            height: 47px;
+            padding: 14px 17px;
+            text-align: left;
+            outline: none;
+            border: none;
+            color: $darkPurple;
+            background-color: white;
+            border-radius: 10px;
+
+            font-family: map-get($fonts, bold);
+            font-size: map-get($fonts-sizes, s-regular);
+        }
+    }
+
+    .nav__input__modal.active {
+        transition: 350ms cubic-bezier(0.6, 0.02, 0.05, 0.9);
+        opacity: 1;
+    }
+
+    .nv__left__container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .nv__logo {
+            font-family: map-get($fonts, primary);
+            font-size: map-get($fonts-sizes, s-medium);
+            outline: none;
+            text-decoration: none;
+            color: $green;
+        }
+
+        .nv__horizontal__container {
+            display: none;
+
+            .nv__navlink {
+                text-decoration: none;
+                padding: 5px 30px;
+                height: 37px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    text-decoration: none;
+                }
+
+                p {
+                    font-family: map-get($fonts, primary);
+                    font-size: map-get($fonts-sizes, s-small-regular);
+                    cursor: pointer;
+                }
+            }
+
+            .nv__navlink:nth-child(2) {
+                background-color: $green;
+
+                p:nth-child(1) {
+                    color: $black;
+                }
+            }
+            .nv__navlink:nth-child(1) {
+                p:nth-child(1) {
+                    color: $green;
+                }
+            }
+            .nv__navlink:nth-child(3) {
+                border: 2px solid $green;
+
+                p:nth-child(1) {
+                    color: $green;
+                }
+            }
+
+            .nv__horizontal__dropdown__container {
+                position: relative;
+                // width: 150px;
+
+                .nv__horizontal__dropdown {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    img {
+                        transform: rotate(90deg);
+                    }
+                }
+
+                .nv__horizontal__dropdown__item {
+                    display: none;
+
+                    @include dekstop {
+                        display: block;
+                        position: absolute;
+                        background-color: $white;
+                        padding: 21px 26px;
+                        border-radius: 15px;
+                        width: 150px;
+                        opacity: 0;
+                        top: -1000px;
+                        transition: 850ms;
+                        z-index: 999;
+                    }
+                }
+
+                .nv__horizontal__dropdown__item.active {
+                    @include dekstop {
+                        transition: 350ms;
+                        top: unset;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            @include dekstop {
+                display: block;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 450px !important;
+                margin-left: 52px;
+            }
+        }
+
+        @include dekstop {
+            display: block;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .nv__sidebar__container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 70%;
+        background-color: $white;
+        opacity: 0;
+        transition: 850ms ease;
+        border-radius: 0px 20px 20px 0px;
+        z-index: 999;
+
+        .nv__sidebar__closetoggle {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            padding: 6px;
+            background-color: $darkGrey;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nv__sidebar__content {
+            margin-top: 82px;
+
+            .nv__sidebar__item {
+                margin-bottom: 2px;
+                width: 100%;
+                background-color: $regularPurple;
+                padding: 24px 28px 24px 28px;
+
+                a {
+                    text-decoration: none;
+                }
+
+                p {
+                    font-family: map-get($fonts, primary);
+                    font-size: map-get($fonts-sizes, s-extra-regular);
+                    color: $white;
+                }
+            }
+
+            .nv__sidebar__item:nth-child(4) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .nv__sidebar__arrow {
+                    background-color: $white;
+                    padding: 3px;
+                    border-radius: 10px;
+                    width: 36px;
+                    height: 36px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        transform: rotate(95deg);
+                    }
+                }
+            }
+
+            .nv__sidebar__subitem {
+                padding: 26px 28px 65px 48px;
+                opacity: 0;
+                transition: 850ms ease;
+                outline: none;
+
+                a {
+                    text-decoration: none;
+                }
+
+                p {
+                    font-family: map-get($fonts, primary);
+                    font-size: map-get($fonts-sizes, s-extra-regular);
+                    color: $green;
+                }
+            }
+
+            .nv__sidebar__subitem.active {
+                transition: 350ms ease;
+                opacity: 1;
+            }
+        }
+
+        .nv__sidebar__socialmedia {
+            padding: 0 28px 65px 28px;
+            margin-top: 150px;
+            p {
+                font-family: map-get($fonts, regular);
+                font-size: map-get($fonts-sizes, s-small);
+                color: $veryDarkGrey;
+            }
+
+            .nv__sidebar__socialmedia__item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 114px;
+            }
+        }
+
+        @include dekstop {
+            display: none;
+        }
+    }
+
+    .nv__sidebar__container.active {
+        display: block;
+        opacity: 1;
+
+        transition: 350ms ease;
+
+        @include dekstop {
+            display: none;
+        }
+    }
+
+    .nv__right__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav__right__item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            margin-left: 13px;
+            background-color: $darkGrey;
+            border-radius: 50%;
+            cursor: pointer;
+
+            .nv__cartcount__container {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                top: -8px;
+                left: 20px;
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                background-color: $regularPurple;
+                cursor: pointer;
+
+                p {
+                    margin-top: 2px;
+                    font-family: map-get($fonts, primary);
+                    font-size: map-get($fonts-sizes, s-extra-small);
+                    color: $white;
+                }
+            }
+        }
+
+        .nav__right__item:nth-child(1) {
+            @include dekstop {
+                display: none;
+            }
+        }
+    }
+}

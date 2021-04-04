@@ -1,0 +1,78 @@
+// ----------------------- FONT FACE ---------------------------
+
+@font-face {
+    font-family: 'Hanson Local';
+    src: url('../../assets/fonts/HansonBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Wild World Local';
+    src: url('../../assets/fonts/WildWorldBOLD.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Holligate Signature Local';
+    src: url('../../assets/fonts/HolligateSignatureDemo.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+// ----------------------- COLORS ---------------------------
+
+$lightPurple: #fbf5ff;
+$mediumLightPurple: #e2b9ff;
+$regularPurple: #7200c1;
+$darkPurple: #4f0385;
+
+$yellow: #ffc700;
+$blue: #0763cf;
+$black: #333333;
+
+$lightGrey: #fbfbfb;
+$mediumGrey: #f4f4f4;
+$darkGrey: #eaeaea;
+$veryDarkGrey: #828282;
+
+$white: #ffffff;
+
+$green: #00ff47;
+$black: #000000;
+$white: #ffffff;
+
+// --------------------- RESPONSIVE WIDTH ---------------------
+
+$dekstop-responsive-width: 1133px;
+
+// --------------------- FONT FAMILY ---------------------
+
+$fonts: (
+    'primary': Hanson Local,
+    'secondary': Wild World Local,
+    'third': Holligate Signature Local,
+);
+
+$fonts-weight: (
+    'regular': 400,
+    'medium': 500,
+    'bold': 700,
+    'SuperBold': 900,
+);
+
+$fonts-sizes: (
+    's-extra-small': 12px,
+    's-small': 14px,
+    's-small-regular': 16px,
+    's-regular': 18px,
+    's-extra-regular': 20px,
+    's-medium': 25px,
+    's-extra-medium': 50px,
+    's-large': 80px,
+    's-extra-large': 100px,
+);

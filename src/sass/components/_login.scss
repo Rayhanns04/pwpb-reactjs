@@ -1,0 +1,88 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+
+.lgn__ms__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lgn__item__container {
+    position: relative;
+    width: 85%;
+    height: 428px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+
+    h2 {
+        font-family: map-get($fonts, primary);
+        font-size: map-get($fonts-sizes, s-medium);
+        color: $green;
+        margin-top: 30px;
+    }
+
+    .lgn__input__container {
+        margin-top: 10px;
+
+        .lgn__item__input {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 20px;
+
+            label {
+                font-family: map-get($fonts, primary);
+                font-size: map-get($fonts-sizes, s-regular);
+                color: $green;
+            }
+
+            input[type='text'] {
+                outline: none;
+                width: 354px;
+                height: 41px;
+                padding: 0 18px;
+                font-family: map-get($fonts, primary);
+                font-size: map-get($fonts-sizes, s-small);
+                color: black;
+                background-color: $green;
+                border: 3px solid #05bd38;
+                border-radius: 5px;
+            }
+        }
+
+        .lgn__item__input:nth-child(2) {
+            margin-top: 22px;
+        }
+    }
+
+    .submit {
+        position: absolute;
+        bottom: 30px;
+        width: 354px;
+        padding: 13px 80px;
+        height: 41px;
+        background-color: $green;
+        color: black;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        font-family: map-get($fonts, primary);
+        font-size: map-get($fonts-sizes, s-regular);
+    }
+
+    @include dekstop {
+        width: 435px;
+        height: 428px;
+        margin-top: 150px;
+    }
+}
